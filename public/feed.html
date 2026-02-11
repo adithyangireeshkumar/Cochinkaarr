@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Cochinkaarr</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-feed.css">
+</head>
+
+<body>
+    <!-- Water Droplets -->
+    <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="droplet" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="droplet" style="left: 40%; animation-delay: 4s;"></div>
+    <div class="droplet" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="droplet" style="left: 75%; animation-delay: 3s;"></div>
+    <div class="droplet" style="left: 90%; animation-delay: 5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo" onclick="window.location.href='feed.html'">Cochinkaarr</h1>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="user-search" placeholder="Search users...">
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <div class="nav-links">
+                <button class="nav-btn active" onclick="window.location.href='feed.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"></path>
+                    </svg>
+                    <span>Feed</span>
+                </button>
+
+                <button class="nav-btn" onclick="window.location.href='reels.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <span>Reels</span>
+                </button>
+
+                <button class="nav-btn" onclick="window.location.href='live.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 7l-7 5 7 5V7z"></path>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                    <span>Live</span>
+                </button>
+
+                <button class="nav-btn" onclick="window.location.href='explore.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                    <span>Explore</span>
+                </button>
+
+                <button class="nav-btn" onclick="window.location.href='messages.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    <span>Messages</span>
+                </button>
+
+                <div class="notification-wrapper">
+                    <button class="nav-btn" id="notifications-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span id="notification-badge" class="badge"></span>
+                        <span>Notifications</span>
+                    </button>
+                    <div id="notifications-dropdown" class="notifications-dropdown">
+                        <div class="notifications-header">
+                            <h3>Notifications</h3>
+                            <button id="mark-read-btn">Mark all read</button>
+                        </div>
+                        <div id="notifications-list"></div>
+                    </div>
+                </div>
+
+                <button class="nav-btn" id="create-post-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    <span>Create</span>
+                </button>
+
+                <button class="nav-btn" onclick="window.location.href='profile.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </button>
+
+                <button class="nav-btn" id="logout-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Feed Content -->
+    <div class="feed-container">
+        <!-- Stories Bar -->
+        <div class="stories-bar">
+            <div class="story-item create-story" onclick="openCreateStoryModal()">
+                <div class="story-ring">
+                    <div class="story-avatar add-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                </div>
+                <span>Add Story</span>
+            </div>
+            <div id="stories-list" class="stories-list"></div>
+        </div>
+
+        <div id="posts-container"></div>
+        <div id="loading-indicator" class="loading">
+            <div class="spinner"></div>
+            <p>Loading posts...</p>
+        </div>
+    </div>
+
+    <!-- Create Post Modal -->
+    <div id="create-post-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Post</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="create-post-form">
+                <div class="file-upload-area" id="file-upload-area">
+                    <input type="file" id="media-input" accept="image/*,video/*" required>
+                    <div class="upload-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <p>Click to upload photo or video</p>
+                    </div>
+                    <div id="media-preview" class="media-preview"></div>
+                </div>
+                <textarea id="post-caption" placeholder="Write a caption..." rows="3"></textarea>
+                <div class="post-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="is-reel-check"> Post as Reel (Vertical Video)
+                    </label>
+                    <div class="filter-options">
+                        <p>Filter:</p>
+                        <select id="filter-select">
+                            <option value="">None</option>
+                            <option value="filter-grayscale">Grayscale</option>
+                            <option value="filter-sepia">Sepia</option>
+                            <option value="filter-contrast">High Contrast</option>
+                            <option value="filter-saturate">Saturated</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="collab-user" placeholder="Collaborator username (optional)">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Share Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Story Modal -->
+    <div id="create-story-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add to Story</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="create-story-form">
+                <div class="file-upload-area" id="story-upload-area">
+                    <input type="file" id="story-media-input" accept="image/*,video/*" required>
+                    <div class="upload-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p>Upload for Story</p>
+                    </div>
+                    <div id="story-media-preview" class="media-preview"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Share to Story</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Auth check - redirect to login if not authenticated
+        if (!localStorage.getItem('token')) {
+            window.location.href = 'login.html';
+        }
+
+        // Set active view
+        document.addEventListener('DOMContentLoaded', () => {
+            const feedView = document.getElementById('feed-view');
+            if (feedView) feedView.classList.add('active');
+        });
+    </script>
+</body>
+
+</html>

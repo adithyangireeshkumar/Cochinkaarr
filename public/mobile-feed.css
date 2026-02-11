@@ -1,0 +1,391 @@
+/* ==================== MOBILE FEED OPTIMIZATIONS ==================== */
+
+/* Feed Container Mobile Adjustments */
+@media (max-width: 768px) {
+    .feed-container {
+        padding: 0;
+        padding-bottom: 80px;
+        /* Space for bottom nav */
+    }
+
+    /* Navigation - Hide on mobile, show bottom nav */
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(5, 20, 16, 0.95);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--glass-border);
+        border-bottom: none;
+        padding: 0.5rem 0;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 0.5rem;
+        max-width: 100%;
+    }
+
+    .nav-logo {
+        display: none;
+        /* Hide logo on mobile */
+    }
+
+    .search-container {
+        display: none;
+        /* Hide search on mobile, can add search icon */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-btn {
+        flex-direction: column;
+        padding: 0.5rem 0.75rem;
+        min-width: auto;
+        font-size: 0.7rem;
+        gap: 0.25rem;
+    }
+
+    .nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-btn span {
+        font-size: 0.65rem;
+    }
+
+    /* Hide less important nav items on very small screens */
+    .notification-wrapper,
+    .nav-btn:nth-child(n+6) {
+        display: none;
+    }
+
+    /* Stories Bar Mobile */
+    .stories-bar {
+        padding: 1rem 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .stories-bar::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari */
+    }
+
+    .story-item {
+        min-width: 70px;
+    }
+
+    .story-ring {
+        width: 60px;
+        height: 60px;
+    }
+
+    .story-avatar {
+        width: 54px;
+        height: 54px;
+    }
+
+    /* Post Cards Mobile */
+    .post-card {
+        margin-bottom: 0.5rem;
+        border-radius: 0;
+        /* Full width on mobile */
+        border-left: none;
+        border-right: none;
+    }
+
+    .post-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .post-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .post-user-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .post-time {
+        font-size: 0.75rem;
+    }
+
+    .post-media {
+        max-height: 400px;
+        /* Limit height on mobile */
+    }
+
+    .post-actions {
+        padding: 0.75rem 1rem;
+        gap: 1rem;
+    }
+
+    .action-btn {
+        min-width: 44px;
+        /* Touch target size */
+        min-height: 44px;
+    }
+
+    .action-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .post-caption {
+        padding: 0 1rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Comments Section Mobile */
+    .comments-section {
+        padding: 0.75rem 1rem;
+    }
+
+    .comment-form {
+        gap: 0.5rem;
+    }
+
+    .comment-input {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* Modals Mobile */
+    .modal-content {
+        width: 95%;
+        max-width: 95vw;
+        margin: 1rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-header h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Create Post Form Mobile */
+    #create-post-form textarea,
+    #create-story-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .file-upload-area {
+        min-height: 200px;
+    }
+
+    .upload-placeholder svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .upload-placeholder p {
+        font-size: 0.85rem;
+    }
+
+    /* Loading Indicator Mobile */
+    #loading-indicator {
+        padding: 1rem;
+        margin-bottom: 80px;
+        /* Space for bottom nav */
+    }
+
+    .spinner {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Search Results Mobile */
+    .search-results {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 100vh;
+        border-radius: 0;
+        z-index: 1001;
+    }
+
+    /* Notifications Dropdown Mobile */
+    .notifications-dropdown {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 100vh;
+        border-radius: 0;
+        z-index: 1001;
+    }
+}
+
+/* Extra Small Devices (< 375px) */
+@media (max-width: 375px) {
+    .nav-btn span {
+        display: none;
+        /* Hide text labels on very small screens */
+    }
+
+    .nav-btn {
+        padding: 0.5rem;
+    }
+
+    .post-actions {
+        gap: 0.5rem;
+    }
+
+    .action-btn {
+        padding: 0.5rem;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .navbar {
+        padding: 0.25rem 0;
+    }
+
+    .nav-btn {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .nav-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .modal-content {
+        max-height: 95vh;
+    }
+}
+
+/* Tablet Optimization (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .feed-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+    }
+
+    .nav-logo {
+        display: block;
+    }
+
+    .search-container {
+        display: block;
+        max-width: 300px;
+    }
+
+    .post-card {
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+    }
+
+    .stories-bar {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Desktop Optimization (> 1024px) */
+@media (min-width: 1024px) {
+    .feed-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+    }
+
+    .post-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .stories-bar {
+        padding: 2rem 0;
+    }
+
+    /* Show all nav items on desktop */
+    .notification-wrapper,
+    .nav-btn {
+        display: flex;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Increase touch targets */
+    .action-btn,
+    .nav-btn,
+    button,
+    a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .post-card:hover,
+    .nav-btn:hover,
+    .action-btn:hover {
+        transform: none;
+    }
+
+    /* Add active states instead */
+    .post-card:active,
+    .nav-btn:active,
+    .action-btn:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* Prevent zoom on input focus (iOS) */
+@media (max-width: 768px) {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        font-size: 16px !important;
+        /* Prevents iOS zoom */
+    }
+}
+
+/* Safe Area Insets for notched devices */
+@supports (padding: max(0px)) {
+    @media (max-width: 768px) {
+        .navbar {
+            padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+        }
+
+        .feed-container {
+            padding-bottom: max(80px, calc(80px + env(safe-area-inset-bottom)));
+        }
+    }
+}
