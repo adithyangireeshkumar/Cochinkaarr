@@ -1,15 +1,22 @@
 /* ==================== TYPOGRAPHY SYSTEM ==================== */
 
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Import Unique Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Manjari:wght@400;700&display=swap');
+
+/*
+Font Stack:
+- Display/Logo: Righteous (bold, distinctive, modern)
+- Headings: Space Grotesk (geometric, tech-forward)
+- Body: DM Sans (clean, readable, unique)
+- Malayalam: Manjari (Kerala-friendly)
+*/
 
 /* Font Variables */
 :root {
     /* Font Families */
-    --font-display: 'Poppins', 'Manjari', sans-serif;
-    --font-body: 'Inter', 'Manjari', sans-serif;
+    --font-display: 'Righteous', 'Manjari', sans-serif;
+    --font-heading: 'Space Grotesk', 'Manjari', sans-serif;
+    --font-body: 'DM Sans', 'Manjari', sans-serif;
     --font-malayalam: 'Manjari', sans-serif;
 
     /* Font Sizes - Desktop */
