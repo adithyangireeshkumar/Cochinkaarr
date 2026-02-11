@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cochinkaarr - Share Your Moments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-carousel">
+      <img src="/kochi_sunset.png" alt="Fort Kochi" class="carousel-image active">
+      <img src="/kochi_backwaters.png" alt="Kerala Backwaters" class="carousel-image">
+    </div>
+    <div class="loading-content">
+      <h1 class="loading-logo">Cochinkaarr</h1>
+      <div class="loading-spinner"></div>
+      <p class="loading-text">LOADING...</p>
+    </div>
+  </div>
+
+  <!-- Water Droplets -->
+  <div class="droplet" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="droplet" style="left: 25%; animation-delay: 2s;"></div>
+  <div class="droplet" style="left: 40%; animation-delay: 4s;"></div>
+  <div class="droplet" style="left: 60%; animation-delay: 1s;"></div>
+  <div class="droplet" style="left: 75%; animation-delay: 3s;"></div>
+  <div class="droplet" style="left: 90%; animation-delay: 5s;"></div>
+
+  <!-- Authentication View -->
+  <div id="auth-view" class="view active">
+    <div class="auth-container">
+      <div class="auth-header">
+        <h1 class="logo">Cochinkaarr</h1>
+        <p class="tagline">Share Your Visual Moments</p>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="auth-form active">
+        <h2>Welcome Back</h2>
+
+        <!-- Google Login -->
+        <button type="button" class="google-login-btn" id="google-login-btn">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4"
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853"
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05"
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+            <path fill="#EA4335"
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+          </svg>
+          Continue with Google
+        </button>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <form id="login-form-element">
+          <div class="input-group">
+            <input type="email" id="login-email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="login-password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="#" id="show-signup">Sign up</a>
+        </p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="auth-form">
+        <h2>Create Account</h2>
+
+        <!-- Google Signup -->
+        <button type="button" class="google-login-btn" id="google-signup-btn">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4"
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853"
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05"
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+            <path fill="#EA4335"
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+          </svg>
+          Sign up with Google
+        </button>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <form id="signup-form-element">
+          <div class="input-group">
+            <input type="text" id="signup-username" placeholder="Username" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="signup-email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="signup-password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <p class="auth-switch">
+          Already have an account?
+          <a href="#" id="show-login">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App View -->
+  <div id="app-view" class="view">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-logo">Cochinkaarr</h1>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input type="text" id="user-search" placeholder="Search users...">
+          <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div class="nav-links">
+          <button class="nav-btn" data-view="feed">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"></path>
+            </svg>
+            <span>Feed</span>
+          </button>
+
+          <button class="nav-btn" data-view="reels">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <span>Reels</span>
+          </button>
+
+          <button class="nav-btn" data-view="live">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 7l-7 5 7 5V7z"></path>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+            <span>Live</span>
+          </button>
+
+          <button class="nav-btn" data-view="explore">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+            <span>Explore</span>
+          </button>
+
+          <button class="nav-btn" data-view="messages">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+            <span>Messages</span>
+          </button>
+
+          <div class="notification-wrapper">
+            <button class="nav-btn" id="notifications-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span id="notification-badge" class="badge"></span>
+              <span>Notifications</span>
+            </button>
+            <div id="notifications-dropdown" class="notifications-dropdown">
+              <div class="notifications-header">
+                <h3>Notifications</h3>
+                <button id="mark-read-btn">Mark all read</button>
+              </div>
+              <div id="notifications-list"></div>
+            </div>
+          </div>
+
+          <button class="nav-btn" id="create-post-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+            <span>Create</span>
+          </button>
+          <button class="nav-btn" data-view="profile">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Profile</span>
+          </button>
+          <button class="nav-btn" id="logout-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Feed View -->
+    <div id="feed-view" class="content-view active">
+      <div class="feed-container">
+        <!-- Stories Bar -->
+        <div class="stories-bar">
+          <div class="story-item create-story" onclick="openCreateStoryModal()">
+            <div class="story-ring">
+              <div class="story-avatar add-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <span>Add Story</span>
+          </div>
+          <div id="stories-list" class="stories-list"></div>
+        </div>
+
+        <div id="posts-container"></div>
+        <div id="loading-indicator" class="loading">
+          <div class="spinner"></div>
+          <p>Loading posts...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explore View -->
+    <div id="explore-view" class="content-view">
+      <div class="explore-container">
+        <h2>Explore</h2>
+        <div id="explore-grid" class="posts-grid"></div>
+      </div>
+    </div>
+
+    <!-- Messages View -->
+    <div id="messages-view" class="content-view">
+      <div class="messages-layout">
+        <div class="conversations-sidebar">
+          <div class="sidebar-header">
+            <h3>Messages</h3>
+          </div>
+          <div id="conversations-list" class="conversations-list"></div>
+        </div>
+        <div class="chat-area">
+          <div id="chat-header" class="chat-header">
+            <span class="chat-username">Select a conversation</span>
+          </div>
+          <div id="chat-messages" class="chat-messages"></div>
+          <form id="chat-form" class="chat-input-form">
+            <input type="text" id="message-input" placeholder="Type a message..." disabled>
+            <button type="submit" id="send-message-btn" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reels View -->
+    <div id="reels-view" class="content-view">
+      <div class="reels-container" id="reels-container">
+        <!-- Reels will be injected here -->
+      </div>
+    </div>
+
+    <!-- Live View -->
+    <div id="live-view" class="content-view">
+      <div class="live-container">
+        <div class="live-header">
+          <h2>Live Streaming</h2>
+          <button id="start-live-btn" class="btn btn-primary">Go Live</button>
+        </div>
+
+        <div id="active-streams-grid" class="active-streams-grid">
+          <!-- Active streams list -->
+        </div>
+
+        <!-- Broadcaster / Viewer Interface (Hidden by default) -->
+        <div id="live-interface" class="live-interface" style="display:none;">
+          <div class="video-area">
+            <video id="live-video" autoplay muted></video>
+            <div class="live-badge">LIVE</div>
+            <div class="viewer-count">👁️ <span id="live-viewer-count">0</span></div>
+            <button id="end-live-btn" class="btn btn-danger">End Stream</button>
+          </div>
+          <div class="live-chat">
+            <div id="live-chat-messages"></div>
+            <form id="live-chat-form">
+              <input type="text" id="live-chat-input" placeholder="Say something..." autocomplete="off">
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile View -->
+    <div id="profile-view" class="content-view">
+      <div class="profile-container">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="profile-info">
+            <div class="profile-title-row">
+              <h2 id="profile-username">Username</h2>
+              <button id="edit-profile-btn" class="btn-secondary">Edit Profile</button>
+              <button id="follow-btn" class="btn-primary" style="display: none;">Follow</button>
+            </div>
+            <p id="profile-email">email@example.com</p>
+            <p id="profile-bio">Bio goes here</p>
+          </div>
+          <div class="profile-stats">
+            <div class="stat">
+              <span class="stat-value" id="profile-post-count">0</span>
+              <span class="stat-label">Posts</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="profile-followers-count">0</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="profile-following-count">0</span>
+              <span class="stat-label">Following</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-posts">
+          <div class="profile-tabs">
+            <button class="profile-tab active" data-tab="posts">Posts</button>
+            <button class="profile-tab" data-tab="saved">Saved</button>
+          </div>
+          <div id="profile-posts-grid" class="posts-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Post Modal -->
+  <div id="create-post-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create New Post</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="create-post-form">
+        <div class="file-upload-area" id="file-upload-area">
+          <input type="file" id="media-input" accept="image/*,video/*" required>
+          <div class="upload-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <p>Click to upload photo or video</p>
+          </div>
+          <div id="media-preview" class="media-preview"></div>
+        </div>
+        <textarea id="post-caption" placeholder="Write a caption..." rows="3"></textarea>
+    </div>
+    <div class="post-options">
+      <label class="checkbox-label">
+        <input type="checkbox" id="is-reel-check"> Post as Reel (Vertical Video)
+      </label>
+      <div class="filter-options">
+        <p>Filter:</p>
+        <select id="filter-select">
+          <option value="">None</option>
+          <option value="filter-grayscale">Grayscale</option>
+          <option value="filter-sepia">Sepia</option>
+          <option value="filter-contrast">High Contrast</option>
+          <option value="filter-saturate">Saturated</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <input type="text" id="collab-user" placeholder="Collaborator username (optional)">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Share Post</button>
+    </form>
+  </div>
+  </div>
+
+  <!-- Create Story Modal -->
+  <div id="create-story-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add to Story</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="create-story-form">
+        <div class="file-upload-area" id="story-upload-area">
+          <input type="file" id="story-media-input" accept="image/*,video/*" required>
+          <div class="upload-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="16"></line>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+            <p>Upload for Story</p>
+          </div>
+          <div id="story-media-preview" class="media-preview"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Share to Story</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div id="edit-profile-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Edit Profile</h3>
+        <button class="close-modal">&times;</button>
+      </div>
+      <form id="edit-profile-form">
+        <div class="input-group">
+          <label for="edit-bio">Bio</label>
+          <textarea id="edit-bio" rows="3" placeholder="Tell us about yourself"></textarea>
+        </div>
+        <!-- Avatar selection could be added here, for now keeping it simple as text/url or just bio -->
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
