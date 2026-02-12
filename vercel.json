@@ -10,8 +10,8 @@
             "destination": "/uploads/$1"
         },
         {
-            "source": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico))",
-            "destination": "/public/$1"
+            "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico)",
+            "destination": "/public/$1.$2"
         },
         {
             "source": "/",
