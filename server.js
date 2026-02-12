@@ -11,10 +11,8 @@ const session = require('express-session');
 const db = require('./database');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = 'your-secret-key-change-in-production';
-
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
@@ -913,3 +911,13 @@ app.listen(PORT, () => {
     console.log(`\n🚀 Social Media Server running on http://localhost:${PORT}`);
     console.log(`📁 Uploads directory: ${path.join(__dirname, 'uploads')}\n`);
 });
+
+// Export app for Vercel
+module.exports = app;
+
+// Only listen if run directly
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+    });
+}

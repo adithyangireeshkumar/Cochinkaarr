@@ -1,7 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.join(__dirname, 'social_media.db');
+const dbPath = process.env.VERCEL
+  ? path.join('/tmp', 'social_media.db')
+  : path.join(__dirname, 'social_media.db');
 const db = new sqlite3.Database(dbPath);
 
 // Initialize database tables

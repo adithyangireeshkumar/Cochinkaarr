@@ -1,31 +1,25 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "server.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/server.js"
+            "source": "/api/(.*)",
+            "destination": "/api/index.js"
         },
         {
-            "src": "/images/(.*)",
-            "dest": "/public/images/$1"
+            "source": "/uploads/(.*)",
+            "destination": "/uploads/$1"
         },
         {
-            "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico))",
-            "dest": "/public/$1"
+            "source": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico))",
+            "destination": "/public/$1"
         },
         {
-            "src": "/",
-            "dest": "/public/home.html"
+            "source": "/",
+            "destination": "/public/home.html"
         },
         {
-            "src": "/(.*)",
-            "dest": "/public/$1"
+            "source": "/(.*)",
+            "destination": "/public/$1"
         }
     ],
     "env": {
