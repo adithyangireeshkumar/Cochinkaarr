@@ -18,9 +18,10 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
-// Serve landing page explicitly
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+    // Try explicit path resolution for Vercel
+    const homePath = path.resolve(__dirname, 'public', 'home.html');
+    res.sendFile(homePath);
 });
 
 // Session configuration for passport
