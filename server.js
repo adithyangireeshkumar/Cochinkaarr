@@ -18,6 +18,11 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
+// Serve landing page explicitly
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
+});
+
 // Session configuration for passport
 app.use(session({
     secret: 'your-session-secret-change-in-production',
